@@ -1,0 +1,330 @@
+/* Premium 404 Error Page Styling */
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@keyframes glowAccent {
+  0% { box-shadow: 0 0 5px rgba(204, 255, 0, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(204, 255, 0, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(204, 255, 0, 0.2); }
+}
+
+/* Basic structure for error page */
+.error-page {
+  --accent-color: #ccff00;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Background effects */
+.error-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(30, 28, 31, 0.8) 0%, rgba(14, 13, 14, 0.95) 70%);
+  z-index: -1;
+}
+
+/* Optional subtle background pattern */
+.error-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ccff00' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Enhanced error section */
+.content__error {
+  position: relative;
+  animation: fadeIn 1.2s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Large 404 code with enhanced styling */
+.content__error-code {
+  font-size: 12rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-text) 20%, var(--accent-color) 50%, var(--color-text) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
+  line-height: 1;
+  position: relative;
+  letter-spacing: -0.05em;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Decorative elements */
+.content__error-code::before, 
+.content__error-code::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.3), transparent);
+}
+
+.content__error-code::before {
+  top: 20%;
+  left: -10%;
+  transform: rotate(-45deg);
+}
+
+.content__error-code::after {
+  bottom: 20%;
+  right: -10%;
+  transform: rotate(45deg);
+}
+
+/* Error title with enhanced style */
+.content__error-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0.5rem 0 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+  letter-spacing: 0.02em;
+}
+
+.content__error-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  margin: 0.5rem auto 0;
+  opacity: 0.5;
+}
+
+/* Error message with improved readability */
+.content__error-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: rgba(245, 243, 238, 0.8);
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+  text-align: center;
+  padding: 0 20px;
+  letter-spacing: 0.01em;
+}
+
+.content__error-message strong {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.accent-text {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.content__error-message em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.content__error-message h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+/* Premium return home button */
+.content__error-link {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgba(204, 255, 0, 0.03);
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(204, 255, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.9s forwards, glowAccent 3s infinite ease-in-out 1s;
+}
+
+/* Button hover effect */
+.content__error-link:hover {
+  border-color: var(--accent-color);
+  background: rgba(204, 255, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(204, 255, 0, 0.35);
+  color: var(--accent-color);
+}
+
+/* Button active effect */
+.content__error-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3), 0 0 5px rgba(204, 255, 0, 0.25);
+}
+
+/* Button shine effect */
+.content__error-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.15), transparent);
+  transition: all 0.6s ease;
+}
+
+.content__error-link:hover::before {
+  left: 100%;
+}
+
+/* Animation for the button as added by JS */
+.animated-link {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Fix the return-home class to match content__error-link */
+.return-home {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgba(204, 255, 0, 0.03);
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(204, 255, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+
+.return-home:hover {
+  border-color: var(--accent-color);
+  background: rgba(204, 255, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(204, 255, 0, 0.35);
+  color: var(--accent-color);
+}
+
+/* Optional email link styling */
+.content__error-email {
+  color: var(--accent-color);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.content__error-email::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.content__error-email:hover::after {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+/* Accent elements */
+.error-decorative-circle {
+  animation: glowAccent 4s infinite ease-in-out;
+}
+
+.error-decorative-line {
+  animation: fadeIn 1.5s forwards;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .content__error-code {
+    font-size: 8rem;
+  }
+  
+  .content__error-title {
+    font-size: 2rem;
+  }
+  
+  .content__error-message {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content__error-code {
+    font-size: 6rem;
+  }
+  
+  .content__error-title {
+    font-size: 1.75rem;
+  }
+  
+  .content__error-message {
+    font-size: 0.95rem;
+  }
+  
+  .content__error-link, .return-home {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.8rem;
+  }
+} 

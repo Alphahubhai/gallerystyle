@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXYN Favicon Test</title>
+    
+    <!-- Same favicon implementation as index.html -->
+    <link rel="icon" href="axyn-favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="AXYN.ico">
+    <link rel="apple-touch-icon" href="axyn-favicon.svg">
+    <link rel="manifest" href="axyn-favicon-manifest.json">
+    <meta name="theme-color" content="#0e0d0e">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: #0e0d0e;
+            color: #f5f3ee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .favicon-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .favicon-display img {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        
+        .instructions {
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .note {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AXYN Favicon Test</h1>
+    
+    <div class="favicon-display">
+        <h2>Current Favicon:</h2>
+        <img src="axyn-favicon.svg" alt="AXYN Favicon with Rounded Corners">
+    </div>
+    
+    <div class="instructions">
+        <p>The favicon should now be displayed in your browser tab with rounded corners.</p>
+        <p>If you don't see the rounded corner favicon in the browser tab, try:</p>
+        <ol>
+            <li>Refreshing the page completely (Ctrl+F5 or Cmd+Shift+R)</li>
+            <li>Checking the browser developer tools to ensure the SVG favicon is being loaded</li>
+            <li>Testing in different browsers (Chrome, Firefox, Safari, Edge)</li>
+        </ol>
+    </div>
+    
+    <div class="note">
+        <p><strong>Note:</strong> The SVG favicon with rounded corners should be visible in most modern browsers. The ICO file will be used as a fallback for older browsers.</p>
+    </div>
+</body>
+</html> 

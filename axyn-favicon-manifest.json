@@ -1,0 +1,19 @@
+{
+  "name": "AXYN",
+  "short_name": "AXYN",
+  "description": "AXYN's distinctive portfolio showcasing refined design and innovative solutions",
+  "icons": [
+    {
+      "src": "axyn-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0e0d0e",
+  "background_color": "#0e0d0e",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "scope": "/",
+  "lang": "en-US"
+} 

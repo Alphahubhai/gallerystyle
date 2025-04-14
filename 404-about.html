@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | AXYN</title>
+    <meta name="description" content="Discover AXYN's philosophy, creative vision, and commitment to sustainable luxury fashion">
+    <meta name="keywords" content="AXYN brand story, fashion philosophy, luxury design, sustainable fashion, brand heritage">
+    <meta name="author" content="AXYN">
+    
+    <!-- Favicon setup with rounded corners -->
+    <link rel="icon" href="axyn-favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="AXYN.ico">
+    <link rel="apple-touch-icon" href="axyn-favicon.svg">
+    <link rel="manifest" href="axyn-favicon-manifest.json">
+    <meta name="theme-color" content="#0e0d0e">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/404.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .error-page .frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(14, 13, 14, 0.9);
+        }
+        .content__error {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            text-align: center;
+            margin-top: 0;
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            z-index: 99;
+            background-color: rgba(14, 13, 14, 0.95);
+            transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .mobile-menu-open .mobile-menu {
+            right: 0;
+        }
+        .hamburger-menu {
+            position: relative;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .hamburger-menu__line {
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-text);
+            display: block;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .hamburger-menu__line::before,
+        .hamburger-menu__line::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-text);
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s ease;
+        }
+        .hamburger-menu__line::before {
+            top: -10px;
+        }
+        .hamburger-menu__line::after {
+            top: 10px;
+        }
+        .mobile-menu-open .hamburger-menu__line {
+            transform: rotate(45deg);
+        }
+        .mobile-menu-open .hamburger-menu__line::before {
+            transform: rotate(90deg);
+            top: 0;
+        }
+        .mobile-menu-open .hamburger-menu__line::after {
+            transform: rotate(90deg);
+            top: 0;
+        }
+    </style>
+</head>
+<body class="error-page">
+    <main>
+        <header class="frame frame--minimal">
+            <div class="frame__links">
+                <a href="index.html" class="frame__logo-mobile">
+                    AXYN
+                </a>
+                <nav class="frame__links-wrap">
+                    <a href="index.html">Home</a>
+                    <a href="404-experience.html">Experience</a>
+                    <a href="404-store.html">Store</a>
+                    <a href="404-about.html" class="frame__link--current">About</a>
+                    <a href="404-contact.html">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-menu__line"></div>
+            </div>
+            <div class="mobile-menu">
+                <div class="mobile-menu__links">
+                    <a href="index.html">Home</a>
+                    <a href="404-experience.html">Experience</a>
+                    <a href="404-store.html">Store</a>
+                    <a href="404-about.html" class="mobile-menu__link--current">About</a>
+                    <a href="404-contact.html">Contact</a>
+                </div>
+            </div>
+        </header>
+        
+        <section class="content__error">
+            <!-- Decorative elements -->
+            <div class="error-decorative-line" style="position: absolute; top: 15%; left: 15%; width: 120px; height: 1px; background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.2), transparent); transform: rotate(45deg);"></div>
+            <div class="error-decorative-line" style="position: absolute; bottom: 20%; right: 15%; width: 120px; height: 1px; background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.2), transparent); transform: rotate(-45deg);"></div>
+            
+            <h1 class="content__error-code">404</h1>
+            <h2 class="content__error-title">Our <em>Atelier</em> Story</h2>
+            <p class="content__error-message">Our brand narrative is being <em>meticulously composed</em>. We're crafting a story that embodies our dedication to <strong>thoughtful design</strong>, sustainable practices, and <strong>timeless elegance</strong>. AXYN exists at the intersection of <em>premium craftsmanship</em> and innovative vision—a philosophy reflected in every element of our collections. Explore our curated pieces on our home page while we perfect our narrative.</p>
+            <a href="index.html" class="content__error-link">Return Home</a>
+        </section>
+    </main>
+    
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            if (hamburgerMenu) {
+                hamburgerMenu.addEventListener('click', function() {
+                    document.body.classList.toggle('mobile-menu-open');
+                });
+            }
+        });
+    </script>
+    <!-- Link fix script to ensure Return Home button works correctly -->
+    <script src="js/link-fix.js"></script>
+</body>
+</html> 
