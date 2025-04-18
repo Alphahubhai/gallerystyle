@@ -130,7 +130,7 @@ The website is optimized for modern browsers including:
 
 ## Credits
 
-- Design & Development: AXYN Creative Team
+- Design & Development: Sparsh aka Alpha
 - Photography: Various fashion photographers (see image credits in code)
 - Libraries: GSAP, ScrollTrigger, Lenis, ImagesLoaded
 
